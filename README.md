@@ -1,6 +1,10 @@
-# genteel_app
+# Genteel App
 
-A new Flutter project.
+Genteel App is a clothing and fashion ordering application, created with the aim of learning to slicing from the figma UI to the application with flutter and dart. This application still uses dummy data and has not been integrated with API.
+
+Assets & UI Design:
+- [Figma](https://www.figma.com/community/file/1291496940816175035)
+- [Font Google](https://pub.dev/packages/google_fonts)
 
 ## Getting Started
 
