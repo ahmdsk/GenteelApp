@@ -109,7 +109,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
           child: Padding(
             padding: defaultSkipButtonPadding,
             child: Text(
-              'Sign Up',
+              'Get Started',
               style: GoogleFonts.nunito(
                 color: const Color(0xFF090A0A),
                 fontSize: 18,

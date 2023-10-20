@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:genteel_app/onboarding_screen.dart';
-// import 'package:genteel_app/splash_screen.dart';
+import 'package:genteel_app/screen/onboarding_screen.dart';
 
 void main() => runApp(const MyApp());
 
