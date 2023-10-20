@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:genteel_app/model/on_boarding.dart';
+import 'package:genteel_app/screen/auth/signin_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:onboarding/onboarding.dart';
 
@@ -105,6 +106,13 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
         child: InkWell(
           onTap: () {
             debugPrint('Sign Up Ready');
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) {
+                  return const SignInScreen();
+                },
+              ),
+            );
           },
           child: Padding(
             padding: defaultSkipButtonPadding,
