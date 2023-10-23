@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-// import 'package:genteel_app/model/button_login_signin.dart';
+import 'package:genteel_app/screen/auth/forgot_password_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class SignInForm extends StatelessWidget {
@@ -8,6 +8,7 @@ class SignInForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Stack(
         fit: StackFit.expand,
         children: [
@@ -127,7 +128,9 @@ class SignInForm extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
                             TextButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.push(context, MaterialPageRoute(builder: (context) => const ForgotPassword()));
+                              },
                               child: Text(
                                 'Forgot Password?',
                                 style: GoogleFonts.nunito(
@@ -138,6 +141,9 @@ class SignInForm extends StatelessWidget {
                               ),
                             )
                           ],
+                        ),
+                        const SizedBox(
+                          height: 18.0,
                         ),
                         ElevatedButton(
                           onPressed: () {},
