@@ -4,8 +4,13 @@ import 'package:google_fonts/google_fonts.dart';
 
 class ButtonAuth extends StatelessWidget {
   final ButtonLoginSignIn buttonLoginSignIn;
+  final Function onPressed;
 
-  const ButtonAuth({super.key, required this.buttonLoginSignIn});
+  const ButtonAuth({
+    super.key,
+    required this.buttonLoginSignIn,
+    required this.onPressed,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +21,9 @@ class ButtonAuth extends StatelessWidget {
         right: 16.0,
       ),
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+          onPressed();
+        },
         style: ElevatedButton.styleFrom(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(8.0),

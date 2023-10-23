@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:genteel_app/screen/splash_screen.dart';
+import 'package:genteel_app/screen/auth/signin_form_screen.dart';
+// import 'package:genteel_app/screen/splash_screen.dart';
 
 void main() => runApp(const MyApp());
 
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
       ),
-      home: const SplashScreen(),
+      home: const SignInForm(),
     );
   }
 }

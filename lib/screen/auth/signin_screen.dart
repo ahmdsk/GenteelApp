@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:genteel_app/components/button_auth.dart';
 import 'package:genteel_app/model/button_login_signin.dart';
+import 'package:genteel_app/screen/auth/signin_form_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class SignInScreen extends StatelessWidget {
@@ -34,7 +35,9 @@ class SignInScreen extends StatelessWidget {
           Container(
             alignment: Alignment.center,
             padding: EdgeInsets.only(
-              top: MediaQuery.of(context).padding.top * MediaQuery.of(context).size.height * 0.01,
+              top: MediaQuery.of(context).padding.top *
+                  MediaQuery.of(context).size.height *
+                  0.01,
             ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -70,7 +73,10 @@ class SignInScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: buttonLoginSignInList
                           .map(
-                            (button) => ButtonAuth(buttonLoginSignIn: button),
+                            (button) => ButtonAuth(
+                              buttonLoginSignIn: button,
+                              onPressed: () {},
+                            ),
                           )
                           .toList(),
                     ),
@@ -84,7 +90,8 @@ class SignInScreen extends StatelessWidget {
                         children: [
                           const Expanded(child: Divider()),
                           Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 8.0),
                             child: Text(
                               'OR',
                               style: GoogleFonts.nunito(
@@ -103,6 +110,9 @@ class SignInScreen extends StatelessWidget {
                         icon: Icons.email_outlined,
                         color: Colors.black,
                       ),
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => const SignInForm()));
+                      },
                     ),
                   ],
                 ),
