@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:genteel_app/components/button_auth.dart';
 import 'package:genteel_app/model/button_login_signin.dart';
+import 'package:genteel_app/screen/auth/signin_screen.dart';
 import 'package:genteel_app/screen/auth/signup_form_screen.dart';
-import 'package:genteel_app/screen/auth/signup_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class SignInScreen extends StatelessWidget {
-  const SignInScreen({super.key});
+class SignUpScreen extends StatelessWidget {
+  const SignUpScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +51,7 @@ class SignInScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Text(
-                          'Welcome back Daph',
+                          'Welcome To Genteel',
                           style: GoogleFonts.lora(
                             fontSize: 32,
                             fontWeight: FontWeight.w500,
@@ -59,7 +59,7 @@ class SignInScreen extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          'Please log in to continue shopping',
+                          'We’re glad you chose us to shop today',
                           style: GoogleFonts.nunito(
                             fontSize: 16,
                             fontWeight: FontWeight.w500,
@@ -122,7 +122,7 @@ class SignInScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'Don\'t have an account?',
+                      'Already have an account?',
                       style: GoogleFonts.nunito(
                         fontSize: 16,
                         color: Colors.white,
@@ -130,7 +130,7 @@ class SignInScreen extends StatelessWidget {
                     ),
                     TextButton(
                       onPressed: () {
-                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const SignUpScreen()));
+                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const SignInScreen()));
                       },
                       style: TextButton.styleFrom(
                         padding: const EdgeInsets.only(
@@ -138,7 +138,7 @@ class SignInScreen extends StatelessWidget {
                         ),
                       ),
                       child: Text(
-                        'Sign Up',
+                        'Sign In',
                         style: GoogleFonts.nunito(
                           fontSize: 16,
                           fontWeight: FontWeight.w700,
