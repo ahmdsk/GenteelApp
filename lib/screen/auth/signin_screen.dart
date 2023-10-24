@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:genteel_app/components/button_auth.dart';
 import 'package:genteel_app/model/button_login_signin.dart';
 import 'package:genteel_app/screen/auth/signin_form_screen.dart';
+import 'package:genteel_app/screen/auth/signup_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class SignInScreen extends StatelessWidget {
@@ -128,7 +129,9 @@ class SignInScreen extends StatelessWidget {
                       ),
                     ),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => const SignUpScreen()));
+                      },
                       style: TextButton.styleFrom(
                         padding: const EdgeInsets.only(
                           left: 4.0,

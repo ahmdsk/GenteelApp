@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:genteel_app/screen/auth/signin_form_screen.dart';
+import 'package:genteel_app/screen/auth/signup_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class NewPassword extends StatelessWidget {
@@ -7,7 +8,7 @@ class NewPassword extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-   return Scaffold(
+    return Scaffold(
       resizeToAvoidBottomInset: false,
       body: Stack(
         fit: StackFit.expand,
@@ -129,7 +130,10 @@ class NewPassword extends StatelessWidget {
                         ),
                         ElevatedButton(
                           onPressed: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => const SignInForm()));
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const SignInForm()));
                           },
                           style: ButtonStyle(
                             alignment: Alignment.center,
@@ -172,7 +176,14 @@ class NewPassword extends StatelessWidget {
                       ),
                     ),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const SignUpScreen(),
+                          ),
+                        );
+                      },
                       style: TextButton.styleFrom(
                         padding: const EdgeInsets.only(
                           left: 4.0,
@@ -194,6 +205,6 @@ class NewPassword extends StatelessWidget {
           ),
         ],
       ),
-    ); 
+    );
   }
 }
