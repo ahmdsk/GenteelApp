@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:genteel_app/screen/auth/verification_code_screen.dart';
+import 'package:genteel_app/components/text_field_verify_code.dart';
 // import 'package:genteel_app/model/button_login_signin.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class ForgotPassword extends StatelessWidget {
-  const ForgotPassword({super.key});
+class VerificationCode extends StatelessWidget {
+  const VerificationCode({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -49,21 +49,25 @@ class ForgotPassword extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Text(
-                          'Forgot Password?',
+                          'Verification Code',
                           style: GoogleFonts.lora(
                             fontSize: 32,
                             fontWeight: FontWeight.w500,
                             color: Colors.white,
                           ),
                         ),
-                        Text(
-                          'We will send a verification code to you',
-                          style: GoogleFonts.nunito(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w500,
-                            color: Colors.white,
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                          child: Text(
+                            'Please enter the verification code sent to your email',
+                            style: GoogleFonts.nunito(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w500,
+                              color: Colors.white,
+                            ),
+                            textAlign: TextAlign.center,
                           ),
-                        )
+                        ),
                       ],
                     ),
                     const SizedBox(
@@ -72,39 +76,21 @@ class ForgotPassword extends StatelessWidget {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Padding(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 24.0,
-                          ),
-                          child: TextField(
-                            decoration: InputDecoration(
-                              border: const UnderlineInputBorder(),
-                              focusedBorder: const UnderlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Colors.white,
-                                ),
-                              ),
-                              hintText: 'Enter Your Email',
-                              hintStyle: GoogleFonts.nunito(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w400,
-                                color: Colors.white,
-                              ),
-                            ),
-                            style: GoogleFonts.nunito(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w400,
-                              color: Colors.white,
-                            ),
-                          ),
+                        const Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            TextFieldVerifyCode(),
+                            TextFieldVerifyCode(),
+                            TextFieldVerifyCode(),
+                            TextFieldVerifyCode(),
+                          ],
                         ),
                         const SizedBox(
                           height: 28.0,
                         ),
                         ElevatedButton(
-                          onPressed: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => const VerificationCode()));
-                          },
+                          onPressed: () {},
                           style: ButtonStyle(
                             alignment: Alignment.center,
                             fixedSize: MaterialStatePropertyAll(
@@ -123,7 +109,7 @@ class ForgotPassword extends StatelessWidget {
                             ),
                           ),
                           child: Text(
-                            'Send',
+                            'Verify',
                             style: GoogleFonts.nunito(
                               fontSize: 18,
                               fontWeight: FontWeight.w600,
