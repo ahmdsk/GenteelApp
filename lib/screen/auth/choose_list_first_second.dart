@@ -1,26 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:genteel_app/model/purpose_list.dart';
-import 'package:genteel_app/screen/auth/choose_list_first_second.dart';
+import 'package:genteel_app/model/clothes_category.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class ChooseListFirst extends StatefulWidget {
-  const ChooseListFirst({super.key});
+class ChooseListSecond extends StatefulWidget {
+  const ChooseListSecond({super.key});
 
   @override
-  State<ChooseListFirst> createState() => _ChooseListFirstState();
+  State<ChooseListSecond> createState() => _ChooseListSecondState();
 }
 
-class _ChooseListFirstState extends State<ChooseListFirst> {
-  List<PurposeList> listingPurpose = [
-    PurposeList(purpose: 'Browse a curated shop', isActive: true),
-    PurposeList(purpose: 'Get seasonal looks', isActive: false),
-    PurposeList(purpose: 'A fun surprise', isActive: false),
-    PurposeList(purpose: 'Having an AI help me shop', isActive: true),
-    PurposeList(purpose: 'Inspiration', isActive: false),
-    PurposeList(purpose: 'Unique pieces', isActive: false),
-    PurposeList(purpose: 'Hopeful', isActive: false),
-    PurposeList(purpose: 'Transform my style', isActive: true),
-    PurposeList(purpose: 'Do my shopping for me', isActive: false),
+class _ChooseListSecondState extends State<ChooseListSecond> {
+  List<ClothesCategory> listingClothes = [
+    ClothesCategory(clothes: 'Cleavage', isActive: false),
+    ClothesCategory(clothes: 'Arms', isActive: true),
+    ClothesCategory(clothes: 'Back', isActive: false),
+    ClothesCategory(clothes: 'Legs', isActive: true),
+    ClothesCategory(clothes: 'Midsection', isActive: false),
+    ClothesCategory(clothes: 'Rear', isActive: false),
+    ClothesCategory(clothes: 'Shoulders', isActive: false),
   ];
 
   @override
@@ -41,7 +38,7 @@ class _ChooseListFirstState extends State<ChooseListFirst> {
                     vertical: 24.0,
                   ),
                   child: Text(
-                    'First, what are the reasons you’re excited to try Genteel.',
+                    'What do you show off when wearing clothes.',
                     style: GoogleFonts.lora(
                       fontSize: 24,
                       fontWeight: FontWeight.w600,
@@ -59,19 +56,19 @@ class _ChooseListFirstState extends State<ChooseListFirst> {
                     alignment: WrapAlignment.spaceBetween,
                     crossAxisAlignment: WrapCrossAlignment.start,
                     spacing: 12.0,
-                    children: listingPurpose.map((purpose) {
-                      final index = listingPurpose.indexOf(purpose);
+                    children: listingClothes.map((clothes) {
+                      final index = listingClothes.indexOf(clothes);
 
                       return TextButton(
                         onPressed: () {
                           setState(() {
-                            listingPurpose[index] = listingPurpose[index]
-                                .copyWith(isActive: !purpose.isActive);
+                            listingClothes[index] = listingClothes[index]
+                                .copyWith(isActive: !clothes.isActive);
                           });
                         },
                         style: ButtonStyle(
                           alignment: Alignment.center,
-                          side: listingPurpose[index].isActive
+                          side: listingClothes[index].isActive
                               ? null
                               : const MaterialStatePropertyAll(
                                   BorderSide(
@@ -84,18 +81,18 @@ class _ChooseListFirstState extends State<ChooseListFirst> {
                               vertical: 8.0,
                             ),
                           ),
-                          backgroundColor: listingPurpose[index].isActive
+                          backgroundColor: listingClothes[index].isActive
                               ? const MaterialStatePropertyAll(
                                   Color(0xFF00C883),
                                 )
                               : null,
                         ),
                         child: Text(
-                          purpose.purpose,
+                          clothes.clothes,
                           style: GoogleFonts.nunito(
                             fontSize: 14,
                             fontWeight: FontWeight.w700,
-                            color: listingPurpose[index].isActive
+                            color: listingClothes[index].isActive
                                 ? Colors.white
                                 : Colors.black,
                           ),
@@ -110,9 +107,7 @@ class _ChooseListFirstState extends State<ChooseListFirst> {
               alignment: Alignment.center,
               padding: const EdgeInsets.symmetric(vertical: 24.0),
               child: ElevatedButton(
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => const ChooseListSecond()));
-                },
+                onPressed: () {},
                 style: ButtonStyle(
                   alignment: Alignment.center,
                   elevation: const MaterialStatePropertyAll(0.0),
