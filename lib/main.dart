@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:genteel_app/screen/auth/signup_screen.dart';
+import 'package:genteel_app/screen/homepage_screen.dart';
 
 void main() => runApp(const MyApp());
 
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
       ),
-      home: const SignUpScreen(),
+      home: const HomepageScreen(),
     );
   }
 }

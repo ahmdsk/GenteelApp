@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:genteel_app/model/clothes_category.dart';
+import 'package:genteel_app/screen/auth/redirect_page_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ChooseListSecond extends StatefulWidget {
@@ -107,7 +108,9 @@ class _ChooseListSecondState extends State<ChooseListSecond> {
               alignment: Alignment.center,
               padding: const EdgeInsets.symmetric(vertical: 24.0),
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => const RedirectPage()));
+                },
                 style: ButtonStyle(
                   alignment: Alignment.center,
                   elevation: const MaterialStatePropertyAll(0.0),
