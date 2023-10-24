@@ -1,20 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:genteel_app/components/text_field_verify_code.dart';
-import 'package:genteel_app/screen/auth/new_password_screen.dart';
+import 'package:genteel_app/screen/auth/signin_form_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class VerificationCode extends StatelessWidget {
-  const VerificationCode({super.key});
+class NewPassword extends StatelessWidget {
+  const NewPassword({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+   return Scaffold(
       resizeToAvoidBottomInset: false,
       body: Stack(
         fit: StackFit.expand,
         children: [
           Image.asset(
-            'images/forgot_password.png',
+            'images/new_password.png',
             fit: BoxFit.cover,
             width: MediaQuery.of(context).size.width,
           ),
@@ -49,25 +48,21 @@ class VerificationCode extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Text(
-                          'Verification Code',
+                          'Enter new password',
                           style: GoogleFonts.lora(
                             fontSize: 32,
                             fontWeight: FontWeight.w500,
                             color: Colors.white,
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                          child: Text(
-                            'Please enter the verification code sent to your email',
-                            style: GoogleFonts.nunito(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w500,
-                              color: Colors.white,
-                            ),
-                            textAlign: TextAlign.center,
+                        Text(
+                          'Please enter your new password below',
+                          style: GoogleFonts.nunito(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500,
+                            color: Colors.white,
                           ),
-                        ),
+                        )
                       ],
                     ),
                     const SizedBox(
@@ -76,27 +71,65 @@ class VerificationCode extends StatelessWidget {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        const Row(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            TextFieldVerifyCode(),
-                            TextFieldVerifyCode(),
-                            TextFieldVerifyCode(),
-                            TextFieldVerifyCode(),
-                          ],
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 24.0,
+                          ),
+                          child: TextField(
+                            decoration: InputDecoration(
+                              border: const UnderlineInputBorder(),
+                              focusedBorder: const UnderlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: Colors.white,
+                                ),
+                              ),
+                              hintText: 'Enter New Password',
+                              hintStyle: GoogleFonts.nunito(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w400,
+                                color: Colors.white,
+                              ),
+                            ),
+                            style: GoogleFonts.nunito(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w400,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 24.0,
+                            vertical: 8.0,
+                          ),
+                          child: TextField(
+                            decoration: InputDecoration(
+                              border: const UnderlineInputBorder(),
+                              focusedBorder: const UnderlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: Colors.white,
+                                ),
+                              ),
+                              hintText: 'Confirm Password',
+                              hintStyle: GoogleFonts.nunito(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w400,
+                                color: Colors.white,
+                              ),
+                            ),
+                            style: GoogleFonts.nunito(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w400,
+                              color: Colors.white,
+                            ),
+                          ),
                         ),
                         const SizedBox(
-                          height: 28.0,
+                          height: 18.0,
                         ),
                         ElevatedButton(
                           onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const NewPassword(),
-                              ),
-                            );
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => const SignInForm()));
                           },
                           style: ButtonStyle(
                             alignment: Alignment.center,
@@ -116,7 +149,7 @@ class VerificationCode extends StatelessWidget {
                             ),
                           ),
                           child: Text(
-                            'Verify',
+                            'Reset Password',
                             style: GoogleFonts.nunito(
                               fontSize: 18,
                               fontWeight: FontWeight.w600,
@@ -161,6 +194,6 @@ class VerificationCode extends StatelessWidget {
           ),
         ],
       ),
-    );
+    ); 
   }
 }
