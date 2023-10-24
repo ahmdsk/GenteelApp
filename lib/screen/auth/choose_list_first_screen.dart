@@ -94,7 +94,9 @@ class _ChooseListFirstState extends State<ChooseListFirst> {
                           style: GoogleFonts.nunito(
                             fontSize: 14,
                             fontWeight: FontWeight.w700,
-                            color: Colors.black,
+                            color: listingPurpose[index].isActive
+                                ? Colors.white
+                                : Colors.black,
                           ),
                         ),
                       );
@@ -129,7 +131,7 @@ class _ChooseListFirstState extends State<ChooseListFirst> {
                   'Next',
                   style: GoogleFonts.nunito(
                     fontSize: 18,
-                    fontWeight: FontWeight.w500,
+                    fontWeight: FontWeight.w600,
                     color: Colors.black,
                   ),
                 ),
