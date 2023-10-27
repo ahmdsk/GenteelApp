@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:genteel_app/components/button_auth.dart';
+import 'package:genteel_app/components/auth/button_auth.dart';
 import 'package:genteel_app/model/button_login_signin.dart';
 import 'package:genteel_app/screen/auth/signup_form_screen.dart';
 import 'package:genteel_app/screen/auth/signup_screen.dart';

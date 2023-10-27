@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:genteel_app/components/text_field_verify_code.dart';
+import 'package:genteel_app/components/auth/text_field_verify_code.dart';
 import 'package:genteel_app/screen/auth/new_password_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 
